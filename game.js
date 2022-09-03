@@ -4,19 +4,25 @@ function()
 {
     
     borders=document.getElementsByClassName("boundary");
-    words=document.getElementById("helo")
-    console.log(words)
-    words.onmouseover = function(){mouseOver()};
-    words.onmouseout = function() {mouseOut()};
-    
+    // borders[0].style.backgroundColor="red"
+    console.log(borders.length)
+    borders[0].onmouseover = function(){mouseOver(0)};
+    // for(i=0;i<borders.length;i++)
+    // {
+    // borders[i].onmouseover = function(){mouseOver(i)};
+    // borders[i].onmouseout = function() {mouseOut(i)};
+    // }
 
-    function mouseOver()
+    function mouseOver(i)
     {
-        document.getElementById("helo").style.color="red"
+        borders=document.getElementsByClassName("boundary");
+        borders[i].style.backgroundColor="red";
+
     }
-    function mouseOut()
+    function mouseOut(i)
     {
-        document.getElementById("helo").style.color="black"
+        borders=document.getElementsByClassName("boundary");
+        borders[i].style.backgroundColor="#eeeeee";
     }
 }
 )
