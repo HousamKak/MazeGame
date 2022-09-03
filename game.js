@@ -13,6 +13,7 @@ function()
     {
     borders[i].onmouseover = function(){mouseOver()};
     }
+
     // Add restart button
     // borders[5].textContent='Restart';
     restart=document.createTextNode("Restart");
@@ -20,8 +21,9 @@ function()
     borders[5].style.display="flex";
     borders[5].style.justifyContent="center"
     borders[5].style.alignItems="center"
-
-
+    borders[5].onclick=function(){restart()}
+    // Add functionality to the restart button
+    
 
     // Functions Section
 
@@ -53,6 +55,12 @@ function()
     
         // reseting message
         document.getElementById("status").textContent='Begin by moving your mouse over the "S"';
+    }
+
+    function restart()
+    {
+        reset();
+
     }
 }
 )
