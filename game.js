@@ -14,6 +14,10 @@ function()
     borders[i].onmouseover = function(){mouseOver()};
     }
 
+    // Wining condition
+    ending_point=document.getElementById("end");
+    ending_point.onmouseover = function(){document.getElementById("status").textContent='You Won :)'};
+
     // Add restart button
     // borders[5].textContent='Restart';
     restart=document.createTextNode("Restart");
@@ -21,9 +25,8 @@ function()
     borders[5].style.display="flex";
     borders[5].style.justifyContent="center"
     borders[5].style.alignItems="center"
-    borders[5].onclick=function(){restart()}
     // Add functionality to the restart button
-    
+    borders[5].onclick=function(){restart()}
 
     // Functions Section
 
