@@ -13,6 +13,15 @@ function()
     {
     borders[i].onmouseover = function(){mouseOver()};
     }
+    // Add restart button
+    // borders[5].textContent='Restart';
+    restart=document.createTextNode("Restart");
+    borders[5].appendChild(restart);
+    borders[5].style.display="flex";
+    borders[5].style.justifyContent="center"
+    borders[5].style.alignItems="center"
+
+
 
     // Functions Section
 
