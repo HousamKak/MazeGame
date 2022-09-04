@@ -18,17 +18,33 @@ function()
     borders=document.getElementsByClassName("boundary");
     for(i=0;i<borders.length-1;i++)
     {
-    borders[i].onmouseover = function(){mouseOver()};
+    borders[i].onmouseover = function()
+    {
+        if(document.getElementById("status").textContent!='You Won :)')
+        {
+        mouseOver()
+        }
+    
+    };
+
     }
+
     
 
     // Wining condition
     ending_point=document.getElementById("end");
     ending_point.onmouseover = function(){
-        document.getElementById("status").textContent='You Won :)';
-        increaseScore();
-    };
+        
+        if(document.getElementById("status").textContent!='You Won :)' && document.getElementById("status").textContent!='You lost :(' )
+        {
+            increaseScore();
+        }
 
+        if(document.getElementById("status").textContent!='You lost :(')
+        {
+        document.getElementById("status").textContent='You Won :)';
+        }
+    }
     // Score Counter
     lis=document.createElement("ul");
     para1=document.createElement("p");
@@ -78,11 +94,18 @@ function()
         borders[i].style.backgroundColor="red";
         }
 
-        // loss message
-        document.getElementById("status").textContent='You lost :(';
 
         //decrease score
+        if(document.getElementById("status").textContent!='You lost :(' && document.getElementById("status").textContent!='You Won :)')
+        {
         decreaseScore()
+        }
+
+        // loss message
+        if(document.getElementById("status").textContent!='You Won :(')
+        {
+        document.getElementById("status").textContent='You lost :(';
+        }
         
     }
 
